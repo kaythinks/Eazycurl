@@ -20,6 +20,10 @@ class Eazycurl{
 	    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); // follow http 3xx redirects
 	    $response = curl_exec($ch); // execute
 
+	    if(curl_errno($ch)){
+    		return ['Request Error' => curl_error($ch)];
+		}
+
 	    return json_decode($response,true); 
 	}
 
@@ -38,6 +42,10 @@ class Eazycurl{
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 		$data = curl_exec($ch);
+
+		if(curl_errno($ch)){
+    		return 'Request Error'. curl_error($ch);
+		}
 
 		curl_close($ch);
 
@@ -61,16 +69,16 @@ class Eazycurl{
 		curl_setopt($ch, CURLOPT_POST, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
 		 
-		// Set HTTP Header for POST request 
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 		    'Content-Type: application/json',
 		    'Content-Length: ' . strlen($payload))
 		);
 		 
-		// Submit the POST request
 		$data = curl_exec($ch);
-		 
-		// Close cURL session handle
+		
+		if(curl_errno($ch)){
+    		return ['Request Error' => curl_error($ch)];
+		}
 		curl_close($ch);
 
 		return json_decode($data,true); 
@@ -109,7 +117,10 @@ class Eazycurl{
 		 
 		// Submit the POST request
 		$data = curl_exec($ch);
-		 
+		
+		if(curl_errno($ch)){
+    		return ['Request Error' => curl_error($ch)];
+		}
 		// Close cURL session handle
 		curl_close($ch);
 
@@ -141,6 +152,10 @@ class Eazycurl{
 
 	    $response = curl_exec($ch); // execute
 
+	    if(curl_errno($ch)){
+    		return ['Request Error' => curl_error($ch)];
+		}
+
 	    return json_decode($response,true); 
 	}
 
@@ -167,6 +182,10 @@ class Eazycurl{
 		 
 		// Submit the POST request
 		$response = curl_exec($ch);
+
+		if(curl_errno($ch)){
+    		return ['Request Error' => curl_error($ch)];
+		}
 		 
 		// Close cURL session handle
 		curl_close($ch);
