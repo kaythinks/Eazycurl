@@ -115,13 +115,11 @@ class Eazycurl{
 
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 		 
-		// Submit the POST request
 		$data = curl_exec($ch);
 		
 		if(curl_errno($ch)){
     		return ['Request Error' => curl_error($ch)];
 		}
-		// Close cURL session handle
 		curl_close($ch);
 
 		return json_decode($data,true); 
@@ -150,7 +148,7 @@ class Eazycurl{
 
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-	    $response = curl_exec($ch); // execute
+	    $response = curl_exec($ch); 
 
 	    if(curl_errno($ch)){
     		return ['Request Error' => curl_error($ch)];
@@ -180,14 +178,12 @@ class Eazycurl{
 
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 		 
-		// Submit the POST request
 		$response = curl_exec($ch);
 
 		if(curl_errno($ch)){
     		return ['Request Error' => curl_error($ch)];
 		}
 		 
-		// Close cURL session handle
 		curl_close($ch);
 
 		return json_decode($response,true); 
