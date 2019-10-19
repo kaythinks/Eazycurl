@@ -1,6 +1,6 @@
 <?php
 
-namespace Eazycurl;
+namespace Kaythinks\Eazycurl;
 
 class Eazycurl{
 

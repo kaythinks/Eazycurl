@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Eazycurl' => array($baseDir . '/src'),
+    'Kaythinks\\Eazycurl' => array($baseDir . '/src'),
 );
