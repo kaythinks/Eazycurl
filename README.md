@@ -34,7 +34,7 @@ To install this package follow the steps below
 
 	require_once 'vendor/autoload.php';
 
-	use Eazycurl\Eazycurl;
+	use Kaythinks\Eazycurl\Eazycurl;
 
 	echo Eazycurl::getApiResponse('https://jsonplaceholder.typicode.com/todos/11');
 
