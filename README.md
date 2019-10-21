@@ -24,7 +24,7 @@ There are presently 6 static methods namely;
 
 To install this package follow the steps below
 
--- Run composer require kaythinks/goodthoughts
+-- Run composer require kaythinks/eazycurl
 
 -- Run composer dump-autoload
 
