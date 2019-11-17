@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Kaythinks\\Eazycurl": "src/"
+            "Kaythinks\\Eazycurl\\": "src/"
         }
     },
     "require-dev": {
